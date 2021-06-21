@@ -19,15 +19,19 @@ scissors.src = "scissors.png";
 
 function animate() {
 context.clearRect(0, 0, CANVAS_WDT ,CANVAS_HGT);
-context.drawImage(rock, framex * SPRITE_WDT, 0, 300, 300, 0, 100, 200,200);
-context.drawImage(paper, framex * SPRITE_WDT, 0, 300, 300, 200, 100, 200,200);
-context.drawImage(scissors, framex * SPRITE_WDT, 0, 300, 300, 400, 100, 200,200);
+context.drawImage(rock, framex * SPRITE_WDT, 0, 300, 300, 0, 100, 150,150);
+context.drawImage(paper, framex * SPRITE_WDT, 0, 300, 300, 160, 100, 150,150);
+context.drawImage(scissors, framex * SPRITE_WDT, 0, 300, 300, 310, 100, 150,150);
 if (speed % SLOW_FRAME == 0){
 if (framex < 3) framex++;
 else framex = 0;
 }
 speed++;
-requestAnimationFrame(animate);
 }
 
-animate();
+function gameloop() { 
+    animate();
+    window.requestAnimationFrame(gameloop);
+}
+
+window.requestAnimationFrame(gameloop);
