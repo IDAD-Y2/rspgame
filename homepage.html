@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scisscors! </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML5 GameLoop Template">
+    <meta name="author" content="UI Programming">
+
+    <!--StyleSheet-->
+    <link id="switchStyle" rel="stylesheet" type="text/css" href="basicBlue.css">
+    <link rel="stylesheet" href="./styleForm.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    
+        <div id="form" class="overlay">
+
+        <h1 id="settingsPage">Settings</h1>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>&times;</a>
+        <div class="overlay-content">
+            <form id="settingsForm" action="">
+                <label for="name">Name:</label><br>
+                <input type="text" id="playName" name="playName" maxlength="18" ><br><br>
+
+                <label for="volume">Volume</label><br>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <br><br>
+                <label for="name">Style</label><br>
+                <input type="radio" id="blueOpt" name="changeStyle" value="blueOpt" checked="checked">
+                <label id="styleOpt" for="blueOpt">Basic Blue</label><br>
+                <input type="radio" id="purpleOpt" name="changeStyle" value="purpleOpt">
+                <label id="styleOpt" for="purpleOpt">Perfect Purple</label><br>
+                <input type="radio" id="pinkOpt" name="changeStyle" value="pinkOpt">
+                <label id="styleOpt" for="pinkOpt">Plush Pink</label><br><br>
+
+                <label for="rounds">How Many Rounds?</label><br>
+
+                <select name="rounds" id="rounds">
+                    <option value="three">3 Rounds</option>
+                    <option value="five">5 Rounds</option>
+                    <option value="seven">7 Rounds</option>
+                    <option value="infinite">Infinite!</option>
+                </select><br><br>
+
+                <button type="button" onclick="display()"id="closeButton" >Save</button>
+                <button type="button" id="closeButton" onclick="closeNav()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="homepageElements">
+
+        <h1 id="rpstitle" >Rock!Paper!Scissors!</h1>
+
+        <div id="buttons">
+
+            <a href='gameloop.html'><button id = "play">Play!</button></a>
+            <button type="button" id="multiplay">Multiplay!</button>
+            <button type="button" id="settings" onclick="openNav()">Settings!</button>
+        </div>
+    </div>
+
+    <audio src="AllTimeHighJump.mp3" id="music1">
+        Oops! looks like your browser does not support audio tag
+    </audio>
+</body>
+
+<!--JavaScript File-->
+<script src="./script.js"></script>
+
+</html>

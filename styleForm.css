@@ -1,0 +1,145 @@
+form {
+    justify-content: center;
+}
+.slidecontainer {
+    width: 100%;
+  }
+
+  #closeButton {
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    border-radius: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: blueviolet;
+    font-size: 40px;
+    margin: 5px;
+    box-shadow: 
+    inset 0 -4px 1px #42a4ff,
+    inset 0 4px 1px #ee38ff;
+    right: 100%;
+}
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 25px;
+    background: #eeeeee;
+    opacity: 0.5;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5%;
+    height: 30px;
+    background: #ae00ff;
+     border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #aa04a2;
+    cursor: pointer;
+  }
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(53, 10, 49);
+  background-color: rgba(37, 4, 41, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#settingsPage{
+    font-family: 'Righteous', cursive;
+    font-size: 65px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color:#8b00e7;
+}
+
+label {
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    text-align: center;
+     color: rgb(255, 255, 255);
+    text-shadow:
+    -2px -2px 0 rgb(146, 13, 255),  
+    2px -2px 0 rgb(13, 138, 255),
+    -2px 2px 0 rgb(146, 13, 255),
+     2px 2px 0 rgb(146, 13, 255);
+}
+
+input {
+  font-family: 'Do Hyeon', sans-serif ;
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+  color: #eeeeee;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 4px;
+  padding: 3px 10px;
+}
+
+option, select {
+    font-family: 'Righteous', cursive;
+    font-size: 25px;  
+}
+
+#styleOpt {
+    font-size: 25px;
+}
+
+.overlay-content {
+  position: relative;
+  top: -10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}

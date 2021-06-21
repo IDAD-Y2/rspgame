@@ -1,0 +1,157 @@
+
+canvas {
+    background-image:
+    linear-gradient(to right, #f568e9,#a33ee6);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;  
+    bottom: 200px;
+}
+
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 80px;
+    text-align: center;
+     color: rgb(255, 255, 255);
+}
+
+h2 {
+    position: relative;  
+    bottom: 50px;
+    font-family: 'Righteous', cursive;
+    font-size: 70px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#a813e4;
+     background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #dca1ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+
+h3 {
+    font-weight: 3000;
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#a711e2;
+     background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #fea1ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+
+
+#playerScore, #enemyScore {
+display: inline-block;
+margin-left: 200px;
+margin-right: 200px;
+}
+
+#circle1, #circle2, #circle3, #circle4, #circle5, #circle6       {
+    position: relative;  
+    bottom: 50px;
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    border-style: solid;
+    border-color: #a711e2;
+    background: #efa1ff;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#scores
+{
+    text-align:center;
+    position: relative;
+    bottom: 170px;
+}
+
+#rpstitle {
+    text-shadow:
+    -2px -2px 0 rgb(146, 13, 255),  
+    2px -2px 0 rgb(255, 13, 255),
+    -2px 2px 0 rgb(146, 13, 255),
+     2px 2px 0 rgb(146, 13, 255),
+    4px 4px 0 rgb(203, 255, 13),
+     6px 6px 0 rgb(65, 255, 128),
+     8px 8px 0 rgb(59, 232, 255),
+      10px 10px 0 rgb(173, 86, 255);
+    
+}
+
+a:link { 
+    text-decoration: none;}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#homepageElements {
+    margin-top: 15%;
+}
+
+#play, #multiplay, #settings, #back  {
+    border: 2px solid rgb(146, 13, 255);
+    font-family: 'Righteous', cursive;
+    color: white;
+    border-radius: 40px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: blueviolet;
+    font-size: 40px;
+    margin: 5px;
+    display: block;
+    box-shadow: 
+    inset 0 -4px 1px #42a4ff,
+    inset 0 4px 1px #ee38ff;
+}
+
+
+
+#play:hover, #multiplay:hover, #settings:hover, #back:hover  {
+    background-color: #4af020; 
+    padding-right: 15px;
+    padding-left: 15px;
+    color: rgb(0, 0, 0);
+    box-shadow: 
+    inset 0 -4px 1px #7afdfd,
+    inset 0 4px 1px #deff4a;
+  }
+
+  #play:focus, #multiplay:focus, #settings:focus, #back:focus {
+    background-color: #46dbdb; 
+    padding-right: 15px;
+    padding-left: 15px;
+    color: rgb(0, 0, 0);
+    box-shadow: 
+    inset 0 -4px 1px #a0ff88,
+    inset 0 4px 1px #84ffd0;
+  }
+
+body {
+    background-image:
+    radial-gradient(#cefc04 25%, transparent 25%),
+    radial-gradient(#17e9e0 25%, transparent 25%); 
+background-color: #ffffff;
+background-position: 0 0, 50px 50px;
+background-size: 100px 100px;
+}
+
+#back {
+    position: relative;  
+    bottom: 230px;
+}
+    
+    

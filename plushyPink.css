@@ -1,0 +1,167 @@
+
+canvas {
+    background-image:
+    linear-gradient(to right, #ff8bd8, #ffc7ee,#ffc7ee);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;  
+    bottom: 200px;
+}
+
+
+
+audio { display:none;}
+
+h1 {
+    font-weight: 3000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 90px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#ff42c6;
+     background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #fea1ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    position: relative;  
+    bottom: 50px;
+    font-weight: 3000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 70px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#ff42c6;
+     background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #fea1ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-weight: 3000;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+    text-align: center;
+     -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#ff42c6;
+     background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #fea1ff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+#enemyName {
+    -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#1576e6;
+     background: -webkit-linear-gradient(#eee,rgb(242, 251, 255),rgb(191, 237, 245),  #a1cdff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+#playerScore, #enemyScore {
+display: inline-block;
+margin-left: 200px;
+margin-right: 200px;
+}
+
+#circle1, #circle2, #circle3, #circle4, #circle5, #circle6       {
+    position: relative;  
+    bottom: 50px;
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    border-style: solid;
+    border-color: #ee2db4;
+    background: rgb(228, 103, 180);
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#circle4, #circle5, #circle6 {
+    border-color: #2d70ee;
+    background: rgb(103, 157, 228); 
+}
+
+#scores
+{
+    text-align:center;
+    position: relative;
+    bottom: 170px;
+}
+
+a:link { 
+    text-decoration: none;}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#homepageElements {
+    margin-top: 15%;
+}
+
+#play, #multiplay, #settings, #back {
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    border: 2px solid #ee2db4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(255, 73, 225);
+    font-size: 40px;
+    margin: 5px;
+    margin-top: -30px;
+    display: block;
+    box-shadow: 
+    inset 0 -4px 1px #ff81e4,
+    inset 0 4px 1px #34c5ff;
+}
+
+
+
+#play:hover, #multiplay:hover, #settings:hover,#back:hover   {
+    background-color: #bcdffd; 
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #ee2db4;
+    box-shadow: 
+    inset 0 -4px 1px #7afdfd,
+    inset 0 4px 1px #ff71db;
+  }
+
+  #play:focus, #multiplay:focus, #settings:focus, #back:focus {
+    background-color: #46dbdb; 
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #ee2db4;
+    box-shadow: 
+    inset 0 -4px 1px #80ffff,
+    inset 0 4px 1px #ff84ef;
+  }
+
+body {
+    background-image:
+    radial-gradient(#bcdffd 25%, transparent 25%),
+    radial-gradient(#f7bff8 25%, transparent 25%);
+background-color: #ffffff;
+background-position: 0 0, 50px 50px;
+background-size: 100px 100px;
+}
+
+#back {
+    position: relative;  
+    bottom: 230px;
+}
+    
