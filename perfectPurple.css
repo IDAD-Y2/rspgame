@@ -1,7 +1,7 @@
 
 canvas {
     background-image:
-    linear-gradient(to right, #f568e9,#a33ee6);
+    linear-gradient(to right, #f37ee9,#d55de0);
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
@@ -22,12 +22,12 @@ h1 {
 h2 {
     position: relative;  
     bottom: 50px;
-    font-family: 'Righteous', cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 70px;
     text-align: center;
      -webkit-text-fill-color: white;
      -webkit-text-stroke-width: 1.4px;
-     -webkit-text-stroke-color:#a813e4;
+     -webkit-text-stroke-color:#c52ad3;
      background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #dca1ff);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
@@ -36,17 +36,25 @@ h2 {
 
 h3 {
     font-weight: 3000;
-    font-family: 'Righteous', cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 50px;
     text-align: center;
      -webkit-text-fill-color: white;
      -webkit-text-stroke-width: 1.4px;
-     -webkit-text-stroke-color:#a711e2;
+     -webkit-text-stroke-color:#c52ad3;
      background: -webkit-linear-gradient(#eee,rgb(255, 242, 245),rgb(255, 219, 226),  #fea1ff);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
 }
 
+#enemyName {
+    -webkit-text-fill-color: white;
+     -webkit-text-stroke-width: 1.4px;
+     -webkit-text-stroke-color:#00438f;
+     background: -webkit-linear-gradient(#eee,rgb(242, 251, 255),rgb(191, 237, 245),  #a1cdff);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
 
 
 #playerScore, #enemyScore {
@@ -62,12 +70,18 @@ margin-right: 200px;
     height: 33px;
     display: inline-block;
     border-style: solid;
-    border-color: #a711e2;
-    background: #efa1ff;
+    border-color: #c52ad3;
+    background: #fea1ff;
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
 }
+
+#circle4, #circle5, #circle6 {
+    border-color: #004ddd;
+    background: rgb(133, 145, 255); 
+}
+
 
 #scores
 {
@@ -150,6 +164,7 @@ background-size: 100px 100px;
 }
 
 #back {
+    font-family: 'Fredoka One', cursive;
     position: relative;  
     bottom: 230px;
 }
