@@ -11,7 +11,7 @@ var pickCardRand;
 var playerPick;
 var computerPick;
 var cardIsPicked = false;  
-var rounds; 
+var rounds = 1; 
 
 const rock = new Image();
 rock.src = "rock.png";
@@ -47,17 +47,17 @@ function clicked(event) {
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
 
-    if (x < 160 && x > 32 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+    if (x < 160 && x > 32 && y > 110 && y < 292 && cardIsPicked == false) { //780 = 580+(200) <- image width
         playerPick = "rock";
         cardIsPicked = true;
     }
 
-    if (x < 300 && x > 172 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+    if (x < 300 && x > 172 && y > 110 && y < 292 && cardIsPicked == false ) { //780 = 580+(200) <- image width
         playerPick = "paper";
         cardIsPicked = true;
     }
 
-    if (x < 440 && x > 312 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+    if (x < 440 && x > 312 && y > 110 && y < 292 && cardIsPicked == false) { //780 = 580+(200) <- image width
         playerPick = "scissors";
         cardIsPicked = true;
     }
@@ -80,6 +80,7 @@ function clicked(event) {
     }
 
 
+
 function animate() {
     context.clearRect(0, 0, CANVAS_WDT, CANVAS_HGT);
     context.drawImage(rock, framex * SPRITE_WDT, 0, 700, 700, 0, 100, 200, 200);
@@ -93,12 +94,11 @@ function animate() {
     speed++;
 
     if (cardIsPicked == true) {
-        context.font = "40px Arial";
+        context.font = "24px Arial";
         context.fillStyle = "white";
         context.strokeStyle = "rgba(92, 11, 90, 1)";
         context.textAlign = "center";
-        context.fillText("You picked " + playerPick, 230, 330);
-        context.strokeText("You picked " + playerPick, 230, 330);
+        context.fillText("You picked " + playerPick, 230, 315);
     }
 
     if (computer == "rock" && cardIsPicked == true)
@@ -114,36 +114,44 @@ function animate() {
         playerPick == "scissors" && computer == "paper" ||
         playerPick == "paper" && computer == "rock")
     { context.font = "40px Arial";
-    context.fillStyle = "white";
-    context.strokeStyle = "rgba(92, 11, 90, 1)";
-    context.textAlign = "center";
     context.fillText("You WIN", 400, 370);
-    context.strokeText("You WIN", 400, 370);}
+    rounds = rounds + 1;
+    }
 
     if (playerPick == "scissors" && computer == "rock" ||
 playerPick == "paper" && computer == "scissors" ||
 playerPick == "rock" && computer == "paper")
 { 
+context.font = "40px Arial";
 context.fillText("You LOSE", 400, 370);
-context.strokeText("You LOSE", 400, 370);
+rounds = rounds + 1;
+
 }
 
 if (playerPick == "scissors" && computer == "scissors" ||
 playerPick == "paper" && computer == "paper" ||
 playerPick == "rock" && computer == "rock")
 { 
+context.font = "40px Arial";
 context.fillText("DRAW", 400, 370);
-context.strokeText("DRAW", 400, 370);
+rounds = rounds + 1;
 }
 
-
-
 }
 
+function nextRound() {
+    document.getElementById("round").innerHTML = "round " + rounds;
+}
 
+function names() {
+    document.getElementById("playerName").innerHTML = "Name";
+    document.getElementById("enemyName").innerHTML = "Enemy";
+}
 
 function gameloop() {
+    nextRound();
     animate();
+    names();
     window.requestAnimationFrame(gameloop);
 }
 
