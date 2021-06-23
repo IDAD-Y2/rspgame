@@ -3,11 +3,12 @@ var context = canvas.getContext("2d");
 
 const CANVAS_WDT = canvas.width = 800;
 const CANVAS_HGT = canvas.height = 400;
-const SPRITE_WDT = 700; 
+const SPRITE_WDT = 700;
 let framex = 0;
 let speed = 0;
 const SLOW_FRAME = 6;
 var pickCardRand;
+var playerPick;
 
 const rock = new Image();
 rock.src = "rock.png";
@@ -35,20 +36,45 @@ context.shadowOffsetY = 3;
 context.shadowColor = "rgba(80, 32, 131,0.2)";
 context.shadowBlur = 2;
 
-function animate() {
-context.clearRect(0, 0, CANVAS_WDT ,CANVAS_HGT);
-context.drawImage(rock, framex * SPRITE_WDT, 0, 700, 700, 0, 100, 200,200);
-context.drawImage(paper, framex * SPRITE_WDT, 0, 700, 700, 140, 100, 200,200);
-context.drawImage(scissors, framex * SPRITE_WDT, 0, 700, 700, 280, 100, 200,200);
-context.drawImage(load, framex * SPRITE_WDT, 0, 700, 700, 600, 100, 200,200);
-if (speed % SLOW_FRAME == 0){
-if (framex < 10) framex++;
-else framex = 0;
-}
-speed++;
+canvas.addEventListener("mousedown", clicked, false);
+
+function clicked(event) {
+    let rect = canvas.getBoundingClientRect();
+    event.preventDefault();
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+
+    if (x < 160 && x > 32 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+        playerPick = "rock";
+        alert(playerPick);
+    }
+
+    if (x < 300 && x > 172 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+        playerPick = "paper";
+        alert(playerPick);
+    }
+
+    if (x < 440 && x > 312 && y > 110 && y < 292) { //780 = 580+(200) <- image width
+        playerPick = "scissors";
+        alert(playerPick);
+    }
 }
 
-function gameloop() { 
+
+function animate() {
+    context.clearRect(0, 0, CANVAS_WDT, CANVAS_HGT);
+    context.drawImage(rock, framex * SPRITE_WDT, 0, 700, 700, 0, 100, 200, 200);
+    context.drawImage(paper, framex * SPRITE_WDT, 0, 700, 700, 140, 100, 200, 200);
+    context.drawImage(scissors, framex * SPRITE_WDT, 0, 700, 700, 280, 100, 200, 200);
+    context.drawImage(load, framex * SPRITE_WDT, 0, 700, 700, 600, 100, 200, 200);
+    if (speed % SLOW_FRAME == 0) {
+        if (framex < 10) framex++;
+        else framex = 0;
+    }
+    speed++;
+}
+
+function gameloop() {
     animate();
     window.requestAnimationFrame(gameloop);
 }
