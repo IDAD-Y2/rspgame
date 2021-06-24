@@ -16,7 +16,7 @@ function display() {
         switchStyle('basicBlue.css');
     }
 
-    var playerName = document.forms["settingsForm"]["playName"].value;;
+    var playerName = document.forms["settingsForm"]["name"].value;;
     alert("Hello " + playerName + "!");
 
     document.getElementById("form").style.width = "0%";
@@ -32,3 +32,17 @@ function closeNav() {
     document.getElementById("form").style.width = "0%";
 }
 
+document.getElementById("save").addEventListener("save", function(){
+    var x = document.getElementById("name").value;
+    
+    document.getElementById("playerName").innerHTML=x;
+    
+    localStorage.setItem('x', JSON.stringify(x));
+    
+    document.getElementById("playerName").innerHTML = getData();
+});
+
+    function getData(){
+        var retrieve=localStorage.getItem('x');
+        return JSON.parse(retrieve); //Now return the value
+    }

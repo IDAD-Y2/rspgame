@@ -1,29 +1,56 @@
-<canvas id="myCanvas" width="200" height="200" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+<h4>Canvas</h4><canvas width="200" height="100" id="cnv1"></canvas><br/>
+<button id="clear_cnv">Clear</button> - <button id="setnr_cnv">Set Nr</button>
+<script type="text/javascript">
+// <![CDATA[
+// function to clear the canvas ( https://coursesweb.net/ )
+// cnv = the object with the canvas element
+function clearCanvas(cnv) {
+  var ctx = cnv.getContext('2d');     // gets reference to canvas context
+  ctx.beginPath();    // clear existing drawing paths
+  ctx.save();         // store the current transformation matrix
 
-  <script>
-    var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+  // Use the identity matrix while clearing the canvas
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, cnv.width, cnv.height);
 
-var link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = 'http://fonts.googleapis.com/css?family=Vast+Shadow';
-document.getElementsByTagName('head')[0].appendChild(link);
-
-// Trick from https://stackoverflow.com/questions/2635814/
-var image = new Image;
-image.src = link.href;
-image.onerror = function() {
-    ctx.font = '50px "Vast Shadow"';
-    ctx.textBaseline = 'top';
-    ctx.fillText('Hello!', 20, 10);
-};
-  </script>
-
-  <style>
-    canvas {
-    border: 3px solid #ccc;
-    margin: 30px;
+  ctx.restore();        // restore the transform
 }
-  </style>
+
+// sets and adds a random number in canvas
+// cnv = the object with the canvas element
+function  addNrCnv(cnv) {
+  // gets a random number between 1 and 100
+  var nr =  Math.floor(Math.random() * 100 + 1);
+
+  var ctx = cnv.getContext('2d');     // gets reference to canvas context
+
+  // create text with the number in canvas (sets text color, font type and size)
+  ctx.fillStyle = '#00f';
+  ctx.font = 'italic 38px sans-serif';
+  ctx.fillText(nr, 80, 64);
+}
+
+// get a reference to the <canvas> tag
+var cnv1 = document.getElementById('cnv1');
+
+// register onclick event for #clear_cnv button to call the clearCanvas()
+document.getElementById('clear_cnv').onclick = function() { clearCanvas(cnv1); }
+
+// register onclick event for #setnr_cnv button to call the addNrCnv()
+document.getElementById('setnr_cnv').onclick = function() { addNrCnv(cnv1); }
+// ]]>
+</script>
+</body>
+</html>
 

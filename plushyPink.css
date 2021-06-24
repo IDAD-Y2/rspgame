@@ -9,6 +9,7 @@ canvas {
     display: block;
     position: relative;  
     bottom: 200px;
+    border-radius: 30px;
 }
 
 

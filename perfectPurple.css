@@ -9,6 +9,7 @@ canvas {
     display: block;
     position: relative;  
     bottom: 200px;
+    border-radius: 30px;
 }
 
 
@@ -50,8 +51,8 @@ h3 {
 #enemyName {
     -webkit-text-fill-color: white;
      -webkit-text-stroke-width: 1.4px;
-     -webkit-text-stroke-color:#00438f;
-     background: -webkit-linear-gradient(#eee,rgb(242, 251, 255),rgb(191, 237, 245),  #a1cdff);
+     -webkit-text-stroke-color:#00bbb2;
+     background: -webkit-linear-gradient(#eee,rgb(242, 255, 252),rgb(157, 255, 239),  #7affe2);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
 }
