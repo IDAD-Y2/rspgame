@@ -184,7 +184,8 @@ background-size: 100px 100px;
 #back {
     font-family: 'Fredoka One', cursive;
     position: relative;  
-    bottom: 230px;
+    top: 170px;
+    left: 20%;
 }
     
     

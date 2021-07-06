@@ -22,8 +22,9 @@ youPicked = "You picked ";
 youWin = "You Win!";
 youLose = "You Lose!";
 youDraw = "Draw!";
-var playScore;
-var rivalScore;
+var playScore = 0;
+var rivalScore = 0;
+var victory = "";
 
 const rock = new Image();//my images 
 rock.src = "rock.png";
@@ -65,7 +66,7 @@ canvas_results.addEventListener("mousedown", clicked, false);//Event listener to
 
 function clicked(event) {
     let rect = canvas_results.getBoundingClientRect();//Get the boundaries of the canvas 
-    
+
     var x = event.clientX - rect.left;//Get the measurement from the left of canvas
     var y = event.clientY - rect.top;//Get the measurement from the top of canvas
     event.preventDefault();
@@ -86,24 +87,40 @@ function clicked(event) {
 
 }
 
-function randomNum(){
+function randomNum() {
 
-if (cardIsPicked == false) {//picks a random number between 0 and 2  if a card hasn't been picked 
-    var randCard = Math.floor((Math.random() * 3));
+    if (cardIsPicked == false) {//picks a random number between 0 and 2  if a card hasn't been picked 
+        var randCard = Math.floor((Math.random() * 3));
+    }
+
+
+    if (randCard == 0) {//setting up computer selection of card
+        computer = "rock";
+    }
+
+    if (randCard == 1) {
+        computer = "paper";
+    }
+
+    if (randCard == 2) {
+        computer = "scissors";
+    }
+
 }
 
+function victorious() {
 
-if (randCard == 0) {//setting up computer selection of card
-    computer = "rock";
-}
+    if (victory == "Yes") {
+        playScore += 1;
+    }
 
-if (randCard == 1) {
-    computer = "paper";
-}
+    if (victory == "No") {
+        rivalScore += 1;
+    }
 
-if (randCard == 2) {
-    computer = "scissors";
-}
+    if (victory == "Draw") {
+    }
+
 
 }
 
@@ -113,7 +130,7 @@ function animate() {
     context.drawImage(paper, framex * SPRITE_WDT, 0, 700, 700, 140, 100, 200, 200);
     context.drawImage(scissors, framex * SPRITE_WDT, 0, 700, 700, 280, 100, 200, 200);
     context.drawImage(load, framex * SPRITE_WDT, 0, 700, 700, 600, 100, 200, 200);
-    
+
     //Player points
     context.drawImage(star, 0, 0, 700, 700, 40, 50, 200, 200);
     context.drawImage(star, 0, 0, 700, 700, 90, 50, 200, 200);
@@ -123,13 +140,7 @@ function animate() {
     context.drawImage(star, 0, 0, 700, 700, 670, 50, 200, 200);
     context.drawImage(star, 0, 0, 700, 700, 620, 50, 200, 200);
 
-     if(playScore == 1){
-    context2.drawImage(starF, 0, 0, 700, 700, 40, 50, 200, 200);
-     }
 
-      if(rivalScore == 1){
-    context2.drawImage(starF, 0, 0, 700, 700, 620, 50, 200, 200);
-     }
 
     if (speed % SLOW_FRAME == 0) {//anaimation loop that continues to update
         if (framex < 10) framex++;
@@ -137,6 +148,33 @@ function animate() {
     }
     speed++;
 
+    if (playScore == 1) {
+        context.drawImage(starF, 0, 0, 700, 700, 40, 50, 200, 200);
+    }
+
+
+    if (playScore == 2) {
+        context.drawImage(starF, 0, 0, 700, 700, 90, 50, 200, 200);
+    }
+
+    if (playScore == 3) {
+        context.drawImage(starF, 0, 0, 700, 700, 140, 50, 200, 200);
+    }
+
+
+    if (rivalScore == 1) {
+        context.drawImage(starF, 0, 0, 700, 700, 620, 50, 200, 200);
+    }
+
+
+    if (rivalScore == 2) {
+        context.drawImage(starF, 0, 0, 700, 700, 670, 50, 200, 200);
+    }
+
+
+    if (rivalScore == 3) {
+        context.drawImage(starF, 0, 0, 700, 700, 720, 50, 200, 200);
+    }
 }
 
 function whenCardisPicked() {
@@ -148,61 +186,68 @@ function whenCardisPicked() {
     if (computer == "scissors" && cardIsPicked == true) { context2.drawImage(scissors2, framex * SPRITE_WDT, 0, 700, 700, 600, 100, 200, 200); }
 
     context2.font = "24px Arial";
-    
+
     if (cardIsPicked == true) {//message appears when a card is picked 
         context2.fillText(youPicked + playerPick, 230, 315);
     }
 
 
-    if (playerPick == "rock" && computer == "scissors" ||
-        playerPick == "scissors" && computer == "paper" ||
-        playerPick == "paper" && computer == "rock")//Winning conditions 
+    if (playerPick === "rock" && computer === "scissors" ||
+        playerPick === "scissors" && computer === "paper" ||
+        playerPick === "paper" && computer === "rock")//Winning conditions 
     {
         context2.font = "40px Arial";
         context2.fillText(youWin, 400, 370);
-        playerScore++;
+        victory = "Yes";
     }
 
-    if (playerPick == "scissors" && computer == "rock" ||
-        playerPick == "paper" && computer == "scissors" ||
-        playerPick == "rock" && computer == "paper")//losing conditions 
+    if (playerPick === "scissors" && computer === "rock" ||
+        playerPick === "paper" && computer === "scissors" ||
+        playerPick === "rock" && computer === "paper")//losing conditions 
     {
         context2.font = "40px Arial";
         context2.fillText(youLose, 400, 370);
-        rivalScore++;
+        victory = "No";
     }
 
-    if (playerPick == "scissors" && computer == "scissors" ||
-        playerPick == "paper" && computer == "paper" ||
-        playerPick == "rock" && computer == "rock")//draw conditions 
+    if (playerPick === "scissors" && computer === "scissors" ||
+        playerPick === "paper" && computer === "paper" ||
+        playerPick === "rock" && computer === "rock")//draw conditions 
     {
         context2.font = "40px Arial";
         context2.fillText(youDraw, 400, 370);//Draws the result on the screen 
+        victory = "draw";
     }
+
 }
 
+
+
+
+
+
 function nextRound() {
-    
-    if (cardIsPicked == true){
-    setInterval(function erase(){
-        context2.clearRect(0, 0, CANVAS_WDT, CANVAS_HGT);
-        cardIsPicked = false;
-        playerPick = "";
-        computerPick = "";
-        rounds++;
-      },
-      3000);
-  
-    }    
 
-    
+    if (cardIsPicked == true) {
+        var erase = setInterval(function newRound() {
+            context2.clearRect(0, 0, CANVAS_WDT, CANVAS_HGT);
+            cardIsPicked = false;
+            playerPick = "";
+            computerPick = "";
+            rounds++;
+            clearInterval(erase);
+        },
+            3000);
+    }
+
+
     document.getElementById("round").innerHTML = "round " + rounds;
-   }
+}
 
-   
 
-    //Ideas:
-    //Move loading card to a location off the canvas, make all the texts variables so you can replace them with ""
+
+//Ideas:
+//Move loading card to a location off the canvas, make all the texts variables so you can replace them with ""
 
 
 
@@ -211,6 +256,7 @@ function gameloop() {
     randomNum();
     whenCardisPicked();
     nextRound();
+    victorious();
     window.requestAnimationFrame(gameloop);
 }
 

@@ -69,19 +69,6 @@ margin-left: 200px;
 margin-right: 200px;
 }
 
-#circle1, #circle2, #circle3, #circle4, #circle5, #circle6       {
-  position: relative;  
-  bottom: 50px;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  border-style: solid;
-  border-color: #ffffff;
-  background: transparent;
-  border-radius: 50%;
-  margin-left: 5px;
-  margin-right: 5px;
-}
 
 
 #scores
@@ -127,6 +114,6 @@ body {
 audio { display:none;}
 
 #back {
-  position: relative;  
-  bottom: 230px;
+  top: 400px;
+  left: 50%;
 }

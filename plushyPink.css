@@ -178,6 +178,7 @@ background-size: 100px 100px;
 
 #back {
     position: relative;  
-    bottom: 230px;
+    top: 200px;
+    left: 20%;
 }
     
