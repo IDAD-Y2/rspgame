@@ -9,8 +9,9 @@
     margin-right: auto;
     display: block; 
     border-radius: 30px;
-    top: 50%;
-    transform: translate(0, -50%);  
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);         
 }
 
 #the_canvas_results {
@@ -22,8 +23,9 @@
     margin-right: auto;
     display: block; 
     border-radius: 30px;
-    top: 50%;
-    transform: translate(0, -50%);  
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);        
 }
 
 
