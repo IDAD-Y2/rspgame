@@ -22,8 +22,6 @@ function display() {
     document.getElementById("form").style.width = "0%";
 }
 
-setCookie("changeStyle", display());
-
 function openNav() {
     document.getElementById("form").style.width = "100%";
 }

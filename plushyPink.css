@@ -1,17 +1,30 @@
 
-canvas {
+#the_canvas {
     background-image:
     linear-gradient(to right, #b6358b, #ee71c8,#ee71c8);
+    position: absolute;
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    position: relative;  
-    bottom: 200px;
+    display: block; 
     border-radius: 30px;
+    top: 50%;
+    transform: translate(0, -50%);  
 }
 
+#the_canvas_results {
+    background-color: transparent;
+    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+    border-radius: 30px;
+    top: 50%;
+    transform: translate(0, -50%);  
+}
 
 
 audio { display:none;}
