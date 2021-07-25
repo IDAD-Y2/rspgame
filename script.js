@@ -30,17 +30,3 @@ function closeNav() {
     document.getElementById("form").style.width = "0%";
 }
 
-document.getElementById("save").addEventListener("save", function(){
-    var x = document.getElementById("name").value;
-    
-    document.getElementById("playerName").innerHTML=x;
-    
-    localStorage.setItem('x', JSON.stringify(x));
-    
-    document.getElementById("playerName").innerHTML = getData();
-});
-
-    function getData(){
-        var retrieve=localStorage.getItem('x');
-        return JSON.parse(retrieve); //Now return the value
-    }
