@@ -240,10 +240,9 @@ function victorious() {
 }
 
 
-function nextRound() {
 
     var roundNum = 0;
-    if (rivalScore <= trackRound ||playScore <= trackRound||drawScore <= trackRound)  {
+    if (rivalScore < trackRound ||playScore < trackRound||drawScore < trackRound)  {
         var erase = setInterval(function newRound() {
             context2.clearRect(0, 0, CANVAS_WDT, CANVAS_HGT);
             playerPick = "";
@@ -257,14 +256,14 @@ function nextRound() {
     }
 
     console.log("roundNum: " + roundNum);
-            console.log("rounds: " + rounds);
-            console.log("trackrounds: " + trackRound);
-            console.log("Player Score: " + playScore);
-            console.log("Rival Score: " + rivalScore);
-            console.log("Draw Score: " + drawScore);
+            //console.log("rounds: " + rounds);
+           // console.log("trackrounds: " + trackRound);
+           // console.log("Player Score: " + playScore);
+            //console.log("Rival Score: " + rivalScore);
+            //console.log("Draw Score: " + drawScore);
 
     document.getElementById("round").innerHTML = "Round " + rounds;
-}
+
 
 
 
@@ -281,7 +280,6 @@ function gameloop() {
     animate();
     randomNum();
     whenCardisPicked();
-    nextRound();
     victorious();
     window.requestAnimationFrame(gameloop);
 }
